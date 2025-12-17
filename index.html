@@ -1,47 +1,767 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Tinray (Michael)  Huang | Portfolio</title>
+  <meta name="description" content="Tinray (Michael) Huang — Robotics portfolio." />
+  <title>Tinray (Michael) Huang | Portfolio</title>
+
   <style>
-    body{font-family:system-ui,Arial;max-width:900px;margin:40px auto;padding:0 16px;line-height:1.6}
-    nav a{margin-right:12px}
-    section{margin:56px 0}
-    .card{border:1px solid #ddd;border-radius:12px;padding:16px;margin:12px 0}
+    :root{
+      --bg: #0b0b0c;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.09);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.68);
+      --faint: rgba(255,255,255,.45);
+      --border: rgba(255,255,255,.14);
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1100px;
+      --pad: 20px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 700px at 20% 10%, rgba(255,255,255,.08), transparent 60%),
+                  radial-gradient(900px 600px at 80% 20%, rgba(255,255,255,.05), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height: 1.5;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width: var(--max); margin: 0 auto; padding: 0 var(--pad);}
+    .gridline{
+      position: fixed; inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      mask-image: radial-gradient(800px 500px at 50% 10%, black 40%, transparent 75%);
+      opacity: .75;
+    }
+
+    /* Header */
+    header{
+      position: sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      background: rgba(10,10,12,.65);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 12px 0;
+      gap: 14px;
+    }
+    .brand{
+      display:flex; align-items:baseline; gap:10px;
+      min-width: 240px;
+    }
+    .brand .name{font-weight: 650; letter-spacing: .2px}
+    .brand .dot{color: var(--faint)}
+    .brand .role{color: var(--muted); font-size: 13px}
+
+    nav ul{
+      list-style:none; display:flex; gap: 8px; margin:0; padding:0;
+      align-items:center;
+    }
+    nav a{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 10px 12px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      color: var(--muted);
+      transition: transform .15s ease, background .15s ease, border-color .15s ease, color .15s ease;
+      font-size: 14px;
+    }
+    nav a:hover{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.12);
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+    nav a.active{
+      background: rgba(255,255,255,.09);
+      border-color: rgba(255,255,255,.16);
+      color: var(--text);
+    }
+
+    .actions{display:flex; align-items:center; gap:10px;}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-size: 14px;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.24)}
+    .btn.primary{
+      background: rgba(255,255,255,.92);
+      color: #0b0b0c;
+      border-color: rgba(255,255,255,.92);
+      font-weight: 650;
+    }
+    .btn.primary:hover{background: #ffffff}
+
+    /* Mobile nav */
+    .hamburger{
+      display:none;
+      width: 42px; height: 42px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+    }
+    .hamburger span{
+      display:block; width: 18px; height: 2px; margin: 4px auto;
+      background: rgba(255,255,255,.85);
+      border-radius: 2px;
+    }
+    .mobileMenu{
+      display:none;
+      padding: 10px 0 14px 0;
+    }
+    .mobileMenu a{
+      display:block;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      margin: 8px 0;
+      color: var(--text);
+    }
+
+    /* Sections */
+    section{padding: 70px 0;}
+    .hero{
+      padding-top: 68px;
+      padding-bottom: 40px;
+    }
+    .heroCard{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.14);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      box-shadow: var(--shadow);
+      padding: 34px;
+      overflow:hidden;
+      position: relative;
+    }
+    .heroCard::after{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(600px 200px at 20% 0%, rgba(255,255,255,.14), transparent 60%),
+                  radial-gradient(700px 240px at 85% 15%, rgba(255,255,255,.09), transparent 62%);
+      pointer-events:none;
+      opacity:.9;
+    }
+    .heroInner{position:relative; z-index:1}
+    h1{
+      margin: 0 0 10px 0;
+      font-size: clamp(32px, 4.2vw, 54px);
+      line-height: 1.05;
+      letter-spacing: -0.6px;
+    }
+    .tagline{
+      margin: 0 0 18px 0;
+      font-size: clamp(16px, 1.6vw, 20px);
+      color: var(--muted);
+      max-width: 52ch;
+    }
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin: 18px 0 0 0}
+    .chip{
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      color: rgba(255,255,255,.78);
+      font-size: 13px;
+    }
+
+    .sectionHead{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .kicker{
+      color: rgba(255,255,255,.55);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+    h2{
+      margin: 8px 0 0 0;
+      font-size: 28px;
+      letter-spacing: -0.3px;
+    }
+    .sub{
+      color: var(--muted);
+      max-width: 70ch;
+      margin: 10px 0 0 0;
+      font-size: 15px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .card{
+      grid-column: span 6;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      padding: 18px;
+      box-shadow: 0 10px 35px rgba(0,0,0,.25);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+      position: relative;
+      overflow:hidden;
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.07);
+      border-color: rgba(255,255,255,.20);
+    }
+    .card h3{margin: 0 0 8px 0; font-size: 18px; letter-spacing: -0.2px}
+    .card p{margin:0; color: var(--muted); font-size: 14px}
+    .metaRow{
+      display:flex; flex-wrap:wrap; gap:8px;
+      margin-top: 12px;
+    }
+    .pill{
+      font-size: 12px;
+      color: rgba(255,255,255,.75);
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      padding: 6px 8px;
+      border-radius: 999px;
+    }
+
+    /* Projects controls */
+    .controls{
+      display:flex; flex-wrap:wrap; gap:10px;
+      align-items:center; justify-content:space-between;
+      margin: 14px 0 18px 0;
+    }
+    .search{
+      flex: 1 1 260px;
+      display:flex; gap:10px;
+      align-items:center;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      border-radius: 14px;
+      padding: 10px 12px;
+    }
+    .search input{
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: var(--text);
+      font-size: 14px;
+    }
+    .filters{
+      display:flex; flex-wrap:wrap; gap:8px;
+      justify-content:flex-end;
+    }
+    .filterBtn{
+      padding: 9px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      color: rgba(255,255,255,.78);
+      font-size: 13px;
+      cursor:pointer;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease, color .15s ease;
+    }
+    .filterBtn:hover{transform: translateY(-1px); background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.20); color: var(--text)}
+    .filterBtn.active{background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.24); color: var(--text)}
+
+    /* Modal */
+    .modalBackdrop{
+      position: fixed; inset: 0; z-index: 100;
+      background: rgba(0,0,0,.6);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding: 18px;
+    }
+    .modal{
+      width: min(900px, 96vw);
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(12,12,14,.88);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 25px 90px rgba(0,0,0,.55);
+      overflow:hidden;
+    }
+    .modalTop{
+      display:flex; justify-content:space-between; align-items:center;
+      padding: 16px 16px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+    .modalTitle{font-weight: 650; letter-spacing: -0.2px}
+    .modalClose{
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      cursor:pointer;
+    }
+    .modalBody{padding: 18px 16px 20px 16px; color: var(--muted)}
+    .modalBody strong{color: var(--text)}
+    .modalGrid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .modalPanel{
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    footer{
+      padding: 40px 0 60px 0;
+      border-top: 1px solid rgba(255,255,255,.10);
+      color: rgba(255,255,255,.55);
+      font-size: 13px;
+    }
+
+    /* Reveal on scroll */
+    .reveal{opacity:0; transform: translateY(10px); transition: opacity .55s ease, transform .55s ease}
+    .reveal.show{opacity:1; transform: translateY(0)}
+
+    @media (max-width: 900px){
+      .card{grid-column: span 12;}
+      .brand{min-width: unset}
+      nav ul{display:none}
+      .hamburger{display:inline-flex; align-items:center; justify-content:center}
+      .actions .btn{display:none}
+      .mobileMenu.show{display:block}
+      .modalGrid{grid-template-columns: 1fr}
+    }
   </style>
 </head>
+
 <body>
-  <h1>Tinray (Michael)  Huang</h1>
-  <p>One-line tagline about what you do.</p>
+  <div class="gridline" aria-hidden="true"></div>
 
-  <nav>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">
+          <div class="name">Tinray (Michael) Huang</div>
+          <div class="dot">•</div>
+          <div class="role">Robotics / Mechanical Engineering</div>
+        </div>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="card">
-      <h3>Project Title</h3>
-      <p>1–2 sentence summary. Add links later.</p>
+        <nav aria-label="Primary">
+          <ul>
+            <li><a class="navlink" href="#home">Home</a></li>
+            <li><a class="navlink" href="#about">About</a></li>
+            <li><a class="navlink" href="#projects">Projects</a></li>
+            <li><a class="navlink" href="#activities">Activities</a></li>
+            <li><a class="navlink" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="actions">
+          <!-- Replace # with your real public LinkedIn URL later -->
+          <a class="btn" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn primary" href="#contact">Contact</a>
+
+          <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobileMenu" id="mobileMenu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#activities">Activities</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
-  </section>
+  </header>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="card">
-      <h3>Role — Company/Lab</h3>
-      <p>Short description.</p>
+  <main>
+    <!-- HOME -->
+    <section id="home" class="hero">
+      <div class="wrap">
+        <div class="heroCard reveal">
+          <div class="heroInner">
+            <h1>Robotic engineer who brings <span style="color:rgba(255,255,255,.96)">______</span> to life.</h1>
+            <p class="tagline">
+              This is a living portfolio. I’ll keep adding projects, experiments, and build logs as they mature.
+            </p>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px;">
+              <a class="btn primary" href="#projects">View Projects</a>
+              <a class="btn" href="#about">About Me</a>
+            </div>
+
+            <div class="chips" aria-label="Highlights">
+              <div class="chip">Bio-inspired mechanisms</div>
+              <div class="chip">Robotics prototyping</div>
+              <div class="chip">Mechatronics & control</div>
+              <div class="chip">Hands-on builds</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="wrap">
+        <div class="sectionHead">
+          <div>
+            <div class="kicker">About</div>
+            <h2>Who I am</h2>
+            <p class="sub">
+              Placeholder for your short bio. Later you can add: your focus areas, what you’re looking for, and a 2–3 sentence story.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="card reveal">
+            <h3>Focus</h3>
+            <p>Replace with your focus areas (e.g., mechanism design, bio-inspired robotics, human-robot interaction).</p>
+            <div class="metaRow">
+              <span class="pill">Mechanisms</span>
+              <span class="pill">Robotics</span>
+              <span class="pill">Prototyping</span>
+            </div>
+          </div>
+          <div class="card reveal">
+            <h3>What I’m looking for</h3>
+            <p>Internship / job application — add target roles, timeline, and location flexibility.</p>
+            <div class="metaRow">
+              <span class="pill">Internship</span>
+              <span class="pill">Full-time</span>
+              <span class="pill">Remote / On-site</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="wrap">
+        <div class="sectionHead">
+          <div>
+            <div class="kicker">Projects</div>
+            <h2>Selected work</h2>
+            <p class="sub">
+              Click a card to open details. Use the search + filters once you start adding real tags.
+            </p>
+          </div>
+        </div>
+
+        <div class="controls">
+          <div class="search" role="search">
+            <span style="color:rgba(255,255,255,.55)">⌕</span>
+            <input id="projectSearch" type="search" placeholder="Search projects (e.g., ROS, CAD, control)..." />
+          </div>
+          <div class="filters" aria-label="Project filters">
+            <button class="filterBtn active" data-filter="all">All</button>
+            <button class="filterBtn" data-filter="robotics">Robotics</button>
+            <button class="filterBtn" data-filter="mechanism">Mechanism</button>
+            <button class="filterBtn" data-filter="software">Software</button>
+            <button class="filterBtn" data-filter="research">Research</button>
+          </div>
+        </div>
+
+        <div class="cards" id="projectGrid">
+          <!-- You can replace these placeholders later -->
+          <article class="card reveal projectCard" tabindex="0"
+            data-title="Project Placeholder 1"
+            data-tags="robotics,mechanism"
+            data-summary="One-line result / impact will go here."
+            data-tools="SolidWorks • Arduino • 3D Printing"
+          >
+            <h3>Project Placeholder 1</h3>
+            <p>Short description placeholder. Click to open details.</p>
+            <div class="metaRow">
+              <span class="pill">Robotics</span><span class="pill">Mechanism</span>
+            </div>
+          </article>
+
+          <article class="card reveal projectCard" tabindex="0"
+            data-title="Project Placeholder 2"
+            data-tags="software,robotics"
+            data-summary="Short outcome statement will go here."
+            data-tools="Python • ROS • Computer Vision"
+          >
+            <h3>Project Placeholder 2</h3>
+            <p>Short description placeholder. Click to open details.</p>
+            <div class="metaRow">
+              <span class="pill">Software</span><span class="pill">Robotics</span>
+            </div>
+          </article>
+
+          <article class="card reveal projectCard" tabindex="0"
+            data-title="Project Placeholder 3"
+            data-tags="research"
+            data-summary="Short outcome statement will go here."
+            data-tools="Experiment • Data • Analysis"
+          >
+            <h3>Project Placeholder 3</h3>
+            <p>Short description placeholder. Click to open details.</p>
+            <div class="metaRow">
+              <span class="pill">Research</span>
+            </div>
+          </article>
+
+          <article class="card reveal projectCard" tabindex="0"
+            data-title="Project Placeholder 4"
+            data-tags="mechanism"
+            data-summary="Short outcome statement will go here."
+            data-tools="CAD • Prototyping • Testing"
+          >
+            <h3>Project Placeholder 4</h3>
+            <p>Short description placeholder. Click to open details.</p>
+            <div class="metaRow">
+              <span class="pill">Mechanism</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACTIVITIES -->
+    <section id="activities">
+      <div class="wrap">
+        <div class="sectionHead">
+          <div>
+            <div class="kicker">Activities</div>
+            <h2>Leadership & extracurriculars</h2>
+            <p class="sub">
+              Placeholder section for camps, clubs, volunteering, competitions, talks, etc.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="card reveal">
+            <h3>Activity Placeholder</h3>
+            <p>Add 1–2 lines and a measurable outcome (participants, scope, impact).</p>
+            <div class="metaRow">
+              <span class="pill">Leadership</span>
+              <span class="pill">Community</span>
+              <span class="pill">Teamwork</span>
+            </div>
+          </div>
+          <div class="card reveal">
+            <h3>Activity Placeholder</h3>
+            <p>Add 1–2 lines and what you learned / delivered.</p>
+            <div class="metaRow">
+              <span class="pill">Event Ops</span>
+              <span class="pill">Mentoring</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="wrap">
+        <div class="sectionHead">
+          <div>
+            <div class="kicker">Contact</div>
+            <h2>Let’s connect</h2>
+            <p class="sub">
+              For internship / job opportunities, collaborations, or project discussions.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="card reveal">
+            <h3>Email</h3>
+            <p>
+              <a class="btn primary" href="mailto:michael.tr.huang@gmail.com">michael.tr.huang@gmail.com</a>
+            </p>
+            <p style="margin-top:12px; color:rgba(255,255,255,.55); font-size:13px">
+              Tip: later we can add a contact form (Formspree) so recruiters can message you without opening email.
+            </p>
+          </div>
+
+          <div class="card reveal">
+            <h3>Links</h3>
+            <p style="margin: 10px 0 0 0; display:flex; gap:10px; flex-wrap:wrap;">
+              <!-- Replace # with your real public LinkedIn URL later -->
+              <a class="btn" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a class="btn" href="#" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="btn" href="#" target="_blank" rel="noreferrer">Resume</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © <span id="year"></span> Tinray (Michael) Huang • Built on GitHub Pages
     </div>
-  </section>
+  </footer>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: michael.tr.huang@gmail.com</p>
-    <p>Mobile: (+886) 988-343-741</p>
+  <!-- Modal -->
+  <div class="modalBackdrop" id="modalBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Project details">
+      <div class="modalTop">
+        <div class="modalTitle" id="modalTitle">Project</div>
+        <button class="modalClose" id="modalClose" aria-label="Close">✕</button>
+      </div>
+      <div class="modalBody">
+        <div id="modalSummary">Summary</div>
 
-  </section>
+        <div class="modalGrid">
+          <div class="modalPanel">
+            <strong>Details (placeholder)</strong>
+            <div style="margin-top:8px">
+              Add: your role, problem, approach, and results. Include links to videos/PDFs later.
+            </div>
+          </div>
+          <div class="modalPanel">
+            <strong>Tools</strong>
+            <div id="modalTools" style="margin-top:8px">—</div>
+            <div style="margin-top:12px; color:rgba(255,255,255,.55); font-size:13px">
+              Later we can add media thumbnails and a “View demo” button here.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    hamburger?.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.toggle("show");
+      hamburger.setAttribute("aria-expanded", String(isOpen));
+    });
+    mobileMenu?.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", () => {
+        mobileMenu.classList.remove("show");
+        hamburger.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // Reveal on scroll
+    const revealEls = Array.from(document.querySelectorAll(".reveal"));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if(e.isIntersecting) e.target.classList.add("show");
+      });
+    }, {threshold: 0.12});
+    revealEls.forEach(el => io.observe(el));
+
+    // Active nav link highlight
+    const navLinks = Array.from(document.querySelectorAll(".navlink"));
+    const sections = navLinks
+      .map(a => document.querySelector(a.getAttribute("href")))
+      .filter(Boolean);
+
+    const navIO = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const id = "#" + e.target.id;
+        navLinks.forEach(a => a.classList.toggle("active", a.getAttribute("href") === id));
+      });
+    }, { rootMargin: "-45% 0px -50% 0px", threshold: 0.01 });
+    sections.forEach(s => navIO.observe(s));
+
+    // Projects: filter + search
+    const projectCards = Array.from(document.querySelectorAll(".projectCard"));
+    const searchInput = document.getElementById("projectSearch");
+    const filterBtns = Array.from(document.querySelectorAll(".filterBtn"));
+
+    let activeFilter = "all";
+    function applyFilters(){
+      const q = (searchInput?.value || "").trim().toLowerCase();
+      projectCards.forEach(card => {
+        const title = (card.dataset.title || "").toLowerCase();
+        const tags = (card.dataset.tags || "").toLowerCase();
+        const summary = (card.dataset.summary || "").toLowerCase();
+        const matchText = !q || title.includes(q) || tags.includes(q) || summary.includes(q);
+
+        const matchFilter = (activeFilter === "all") || tags.split(",").map(s=>s.trim()).includes(activeFilter);
+
+        card.style.display = (matchText && matchFilter) ? "" : "none";
+      });
+    }
+
+    searchInput?.addEventListener("input", applyFilters);
+    filterBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filterBtns.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeFilter = btn.dataset.filter || "all";
+        applyFilters();
+      });
+    });
+
+    // Modal for project details
+    const modalBackdrop = document.getElementById("modalBackdrop");
+    const modalClose = document.getElementById("modalClose");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalSummary = document.getElementById("modalSummary");
+    const modalTools = document.getElementById("modalTools");
+
+    function openModal(card){
+      modalTitle.textContent = card.dataset.title || "Project";
+      modalSummary.innerHTML = `<strong>Summary:</strong> ${(card.dataset.summary || "—")}`;
+      modalTools.textContent = card.dataset.tools || "—";
+      modalBackdrop.style.display = "flex";
+      modalBackdrop.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+    function closeModal(){
+      modalBackdrop.style.display = "none";
+      modalBackdrop.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    projectCards.forEach(card => {
+      card.addEventListener("click", () => openModal(card));
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(card); }
+      });
+    });
+
+    modalClose?.addEventListener("click", closeModal);
+    modalBackdrop?.addEventListener("click", (e) => {
+      if (e.target === modalBackdrop) closeModal();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modalBackdrop.style.display === "flex") closeModal();
+    });
+  </script>
 </body>
 </html>
