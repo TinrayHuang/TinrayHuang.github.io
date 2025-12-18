@@ -340,3 +340,69 @@ h2{
   .heroCard.fashion { padding: 24px; }
 }
 
+
+/* =========================
+   HOME — headerless nav + cleaner look
+   ========================= */
+
+/* Hide grid overlay everywhere (or just remove the div in HTML) */
+.gridline { display: none !important; }
+
+/* Make icon button SVG never distort */
+.iconBtn svg{
+  width: 18px !important;
+  height: 18px !important;
+  aspect-ratio: 1 / 1;
+  display: block;
+}
+
+/* Text-only nav (no boxes) */
+.textNav{
+  display:flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.textNav a{
+  color: rgba(255,255,255,.72);
+  font-size: 16px;
+  letter-spacing: .02em;
+  padding: 6px 0;
+  border-bottom: 1px solid transparent;
+  transition: color .15s ease, border-color .15s ease, transform .15s ease;
+}
+.textNav a:hover{
+  color: rgba(255,255,255,.95);
+  border-color: rgba(255,255,255,.35);
+  transform: translateY(-1px);
+}
+.textNav a.active{
+  color: rgba(255,255,255,.95);
+  border-color: rgba(255,255,255,.55);
+}
+
+/* Minimal LinkedIn icon link style to match text nav */
+.textIcon{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color: rgba(255,255,255,.72);
+  font-size: 16px;
+  padding: 6px 0;
+  border-bottom: 1px solid transparent;
+  transition: color .15s ease, border-color .15s ease, transform .15s ease;
+}
+.textIcon:hover{
+  color: rgba(255,255,255,.95);
+  border-color: rgba(255,255,255,.35);
+  transform: translateY(-1px);
+}
+.textIcon svg{
+  width: 18px;
+  height: 18px;
+  aspect-ratio: 1/1;
+  display:block;
+  fill: rgba(255,255,255,.92);
+}
+
