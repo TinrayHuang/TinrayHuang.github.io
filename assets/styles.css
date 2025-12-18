@@ -459,7 +459,7 @@ h2{
   display:grid;
   grid-template-columns: 1.05fr 0.95fr;
   gap: 28px;
-  align-items: center;
+  align-items: start;
   padding: 36px 0 64px 0;
 }
 
