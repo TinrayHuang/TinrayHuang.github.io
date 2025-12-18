@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tinray (Michael) Huang | Activities</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="gridline" aria-hidden="true"></div>
+
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">
+          <div class="name">Tinray Huang</div>
+          <div class="dot">•</div>
+          <div class="role">Robotics / Mechanical Engineering</div>
+        </div>
+
+        <nav aria-label="Primary">
+          <ul>
+            <li><a data-page="index.html" href="index.html">Home</a></li>
+            <li><a data-page="about.html" href="about.html">About</a></li>
+            <li><a data-page="projects.html" href="projects.html">Projects</a></li>
+            <li><a data-page="activities.html" href="activities.html">Activities</a></li>
+            <li><a data-page="contact.html" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="actions">
+          <a class="iconBtn" href="https://www.linkedin.com/in/tinray-huang-1752b9308/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H7.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.33 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM3.55 20.45h3.56V9H3.55v11.45z"/>
+            </svg>
+          </a>
+
+          <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobileMenu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="activities.html">Activities</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <div class="kicker">Activities</div>
+        <h2>Leadership & extracurriculars</h2>
+        <p class="sub">Placeholder — add camps, volunteering, competitions, talks, etc.</p>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Activity Placeholder</h3>
+            <p>1–2 lines + measurable impact later.</p>
+          </div>
+          <div class="card">
+            <h3>Activity Placeholder</h3>
+            <p>1–2 lines + what you contributed later.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div class="wrap">© <span id="year"></span> Tinray (Michael) Huang • GitHub Pages</div>
+    </div>
+  </main>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
