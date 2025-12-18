@@ -12,63 +12,44 @@
     <section>
       <div class="wrap">
 
-        <!-- Text-only navigation on the page (no top bar) -->
-        <div class="textNav">
-          <a data-page="index.html" href="/">Home</a>
-          <a data-page="about.html" href="/about.html">About</a>
-          <a data-page="projects.html" href="/projects.html">Projects</a>
-          <a data-page="activities.html" href="/activities.html">Activities</a>
-          <a data-page="contact.html" href="/contact.html">Contact</a>
+        <!-- Top left name + tabs (text-only, no boxes) -->
+        <div class="homeTop">
+          <div class="homeBrand">Michael Huang</div>
 
-          <a class="textIcon" href="https://www.linkedin.com/in/tinray-huang-1752b9308/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H7.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.33 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM3.55 20.45h3.56V9H3.55v11.45z"/>
-            </svg>
-            LinkedIn
-          </a>
+          <nav class="homeNav" aria-label="Primary">
+            <a data-page="index.html" href="/">Home</a>
+            <a data-page="about.html" href="/about.html">About</a>
+            <a data-page="projects.html" href="/projects.html">Projects</a>
+            <a data-page="activities.html" href="/activities.html">Activities</a>
+            <a data-page="contact.html" href="/contact.html">Contact</a>
+          </nav>
         </div>
 
-        <!-- Fashion / studio hero -->
-        <div class="heroCard fashion">
-          <div class="heroInner">
-            <div class="fashionHero">
+        <!-- Full-bleed hero (no box, no buttons under description) -->
+        <div class="homeHero">
 
-              <div>
-                <div class="fashionKicker">Portfolio</div>
+          <!-- Left: editorial headline + description -->
+          <div>
+            <h1 class="homeTitle">
+              I build robots<br/>
+              that feel alive.
+            </h1>
 
-                <h1 class="fashionName">
-                  Michael<br/>
-                  Huang
-                </h1>
-
-                <p class="fashionSub">
-                  A robotic engineer who brings <strong style="color:rgba(255,255,255,.95)">playful ideas</strong> to life —
-                  with an animatronics mindset: expressive motion, character, and physical storytelling.
-                </p>
-
-                <div class="fashionDivider"></div>
-
-                <div class="homeQuickLinks">
-                  <a class="btn primary" href="/projects.html">Explore Projects</a>
-                  <a class="btn" href="/about.html">About</a>
-                  <a class="btn" href="/contact.html">Contact</a>
-                </div>
-              </div>
-
-              <!-- Photo placeholder -->
-              <div>
-                <div class="photoPh fashionPhoto">
-                  <div style="position:relative; z-index:1;">
-                    Picture placeholder<br/>
-                    (upload later)<br/><br/>
-                    Suggested path:<br/>
-                    <code style="color:rgba(255,255,255,.75)">assets/profile.jpg</code>
-                  </div>
-                </div>
-              </div>
-
-            </div>
+            <p class="homeDesc">
+              I’m a robotic engineer with a love for <strong style="color:rgba(255,255,255,.95)">playful ideas</strong>,
+              expressive motion, and hands-on making.
+              From mechanisms to animatronics, I focus on how machines move, behave, and connect with people.
+            </p>
           </div>
+
+          <!-- Right: blank blended area (no rectangle placeholder) -->
+          <div class="heroMedia" aria-label="Hero media area"></div>
+          <!-- Later, when you have a photo, we’ll blend it by:
+               1) Upload assets/hero.jpg
+               2) Change class to: class="heroMedia withPhoto"
+               3) Uncomment the background-image line in CSS (or I’ll do it for you)
+          -->
+
         </div>
 
       </div>
