@@ -486,12 +486,13 @@ h2{
   position: relative;
   width: 100%;
   height: min(560px, 64vh);
-  border-radius: 0; /* no rectangle frame */
+  border-radius: 0;
   background:
     radial-gradient(700px 420px at 70% 30%, rgba(255,255,255,.10), transparent 65%),
     radial-gradient(600px 360px at 40% 80%, rgba(255,255,255,.06), transparent 70%);
   overflow: hidden;
 }
+
 
 /* Optional “photo blend” mechanism (use later):
    Add a file at assets/hero.jpg then uncomment the background-image line below in this CSS block.
