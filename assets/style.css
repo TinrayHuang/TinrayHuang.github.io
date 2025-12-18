@@ -254,3 +254,89 @@ h2{
   .heroGrid{grid-template-columns: 1fr}
   .card{grid-column: span 12}
 }
+
+/* =========================
+   HOME — fashion / studio hero
+   ========================= */
+
+.heroCard.fashion {
+  padding: 34px;
+}
+
+.fashionHero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 18px;
+  align-items: end;
+}
+
+.fashionKicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,.62);
+  font-size: 12px;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.fashionKicker::before{
+  content:"";
+  width: 34px;
+  height: 1px;
+  background: rgba(255,255,255,.22);
+}
+
+.fashionName {
+  margin: 0 0 12px 0;
+  font-size: clamp(44px, 6.2vw, 84px);
+  line-height: .95;
+  letter-spacing: -1.2px;
+  font-weight: 750;
+  /* more “editorial” */
+  font-family: ui-serif, "New York", Georgia, "Times New Roman", Times, serif;
+}
+
+.fashionSub {
+  margin: 0;
+  color: rgba(255,255,255,.70);
+  font-size: clamp(15px, 1.55vw, 20px);
+  max-width: 62ch;
+}
+
+.fashionDivider {
+  margin: 18px 0 16px 0;
+  height: 1px;
+  background: linear-gradient(to right, rgba(255,255,255,.26), rgba(255,255,255,.06));
+  border-radius: 999px;
+}
+
+.photoPh.fashionPhoto {
+  border-radius: 26px;
+  aspect-ratio: 4/5;
+  background:
+    radial-gradient(500px 260px at 30% 20%, rgba(255,255,255,.10), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+  position: relative;
+  overflow: hidden;
+}
+.photoPh.fashionPhoto::after{
+  content:"";
+  position:absolute; inset: 14px;
+  border-radius: 18px;
+  border: 1px dashed rgba(255,255,255,.20);
+  opacity: .75;
+}
+
+.homeQuickLinks {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+@media (max-width: 900px){
+  .fashionHero { grid-template-columns: 1fr; }
+  .heroCard.fashion { padding: 24px; }
+}
+
