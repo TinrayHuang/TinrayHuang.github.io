@@ -353,3 +353,26 @@ a{
 @media (max-width: 900px){
   .aboutCard{ grid-column: span 12; }
 }
+
+/* Icon-only LinkedIn button (white, minimal) */
+.iconOnly{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:6px 0;
+  border-bottom:1px solid transparent;
+  transition: transform .15s ease, border-color .15s ease, opacity .15s ease;
+}
+
+.iconOnly svg{
+  width:18px;
+  height:18px;
+  fill: #ffffff; /* pure white */
+  display:block;
+}
+
+.iconOnly:hover{
+  transform: translateY(-1px);
+  border-color: rgba(255,255,255,.45);
+  opacity: .9;
+}
