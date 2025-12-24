@@ -250,3 +250,106 @@ a{
 @media (max-width: 900px){
   .projectCard{ grid-column: span 12; }
 }
+
+/* ===== About page (matches Home aesthetic) ===== */
+
+.textIcon{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color: rgba(255,255,255,.70);
+  font-size:16px;
+  padding:6px 0;
+  border-bottom:1px solid transparent;
+  transition: color .15s ease, border-color .15s ease, transform .15s ease;
+}
+.textIcon:hover{
+  color: rgba(255,255,255,.95);
+  border-color: rgba(255,255,255,.35);
+  transform: translateY(-1px);
+}
+.textIcon svg{
+  width:18px;
+  height:18px;
+  aspect-ratio: 1/1;
+  display:block;
+  fill: rgba(255,255,255,.92);
+}
+
+.pageHero{ padding: 34px 0 18px 0; }
+.pageTitle{
+  margin:0 0 10px 0;
+  font-size: clamp(34px, 4.6vw, 54px);
+  line-height: 1.05;
+  letter-spacing: -0.6px;
+  font-weight: 750;
+  font-family: ui-serif, "New York", Georgia, "Times New Roman", Times, serif;
+}
+.pageDesc{
+  margin:0;
+  color: rgba(255,255,255,.70);
+  max-width: 72ch;
+}
+
+.aboutGrid{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+  padding: 18px 0 70px 0;
+}
+.aboutCard{
+  grid-column: span 6;
+  border-radius: 18px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.10);
+  padding: 18px;
+  transition: transform .15s ease, border-color .15s ease, background .15s ease;
+}
+.aboutCard:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,.18);
+  background: rgba(255,255,255,.055);
+}
+.cardTitle{
+  margin:0 0 8px 0;
+  font-size: 18px;
+  letter-spacing: -0.2px;
+}
+.cardText{
+  margin:0;
+  color: rgba(255,255,255,.70);
+  font-size: 14px;
+}
+
+.softDivider{
+  height:1px;
+  background: linear-gradient(to right, rgba(255,255,255,.16), rgba(255,255,255,.06));
+  margin: 14px 0;
+  border-radius: 999px;
+}
+
+.miniList{ display:flex; flex-direction:column; gap:10px; }
+.miniItem{
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  color: rgba(255,255,255,.72);
+  font-size: 14px;
+}
+.miniItem span:first-child{
+  color: rgba(255,255,255,.50);
+  min-width: 90px;
+}
+
+.hintText{
+  margin-top:12px;
+  color: rgba(255,255,255,.55);
+  font-size:13px;
+}
+.hintText code{
+  color: rgba(255,255,255,.75);
+}
+
+@media (max-width: 900px){
+  .aboutCard{ grid-column: span 12; }
+}
