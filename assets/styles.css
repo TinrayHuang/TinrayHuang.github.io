@@ -134,21 +134,9 @@ a{
   width:100%;
   height:min(620px, 70vh);
 
-  background-image:url("hero.png");
-  background-repeat:no-repeat;
-  background-size:contain;
-  background-position:bottom right;
+  background: url("hero.png") no-repeat bottom right / contain;
+}
 
-  filter:saturate(.95) contrast(1.02);
-
-  /* fade into background */
-  mask-image:radial-gradient(
-    80% 80% at 70% 65%,
-    rgba(0,0,0,1) 55%,
-    rgba(0,0,0,.85) 70%,
-    rgba(0,0,0,.55) 85%,
-    rgba(0,0,0,0) 100%
-  );
 
   -webkit-mask-image:radial-gradient(
     80% 80% at 70% 65%,
