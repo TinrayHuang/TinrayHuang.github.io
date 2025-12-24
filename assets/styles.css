@@ -54,7 +54,7 @@ a{
 }
 
 .homeBrand{
-  font-size:22px;          
+  font-size:25px;          
   font-weight:700;
   letter-spacing:.02em;
   color:var(--text);
@@ -69,7 +69,7 @@ a{
 }
 
 .homeNav a{
-  font-size:18px;          /* was 16px */
+  font-size:20px;          
   color:var(--muted);
   padding:6px 0;
   border-bottom:1px solid transparent;
