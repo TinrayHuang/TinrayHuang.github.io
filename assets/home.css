@@ -111,3 +111,8 @@ h1,h2,h3{font-family:var(--font-display)}
 .sample-4 p{font-size:clamp(23px,3.7vw,53px);letter-spacing:-.05em}
 .sample-5 p{font-size:clamp(37px,5.5vw,83px);line-height:1.16}
 .sample-6 p{font-size:clamp(30px,5vw,78px);line-height:1.55}
+
+/* Editorial serif accents: keep main hero headline in Space Grotesk */
+.editorial-accent{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-style:italic;letter-spacing:-.055em}
+.section-heading h2 .editorial-accent{white-space:normal}
+.contact-row h2 .editorial-accent{font-size:.93em}
