@@ -1,65 +1,67 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Michael Huang | Home</title>
-  <link rel="stylesheet" href="assets/styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f2">
+  <meta name="description" content="Michael Huang is a mechanical engineer and maker exploring robotics, mechanisms, and expressive motion.">
+  <title>Michael Huang — Engineer & Maker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
-
 <body>
-  <main>
-    <section>
-      <div class="wrap">
-
-        <!-- Top left name + tabs (text-only, no boxes) -->
-        <div class="homeTop">
-          <div class="homeBrand">Michael Huang</div>
-
-          <nav class="homeNav" aria-label="Primary">
-            <a data-page="index.html" href="/">Home</a>
-            <a data-page="about.html" href="/about.html">About</a>
-            <a data-page="projects.html" href="/projects.html">Projects</a>
-            <a data-page="activities.html" href="/activities.html">Activities</a>
-            <a data-page="contact.html" href="/contact.html">Contact</a>
-          </nav>
-        </div>
-
-        <!-- Full-bleed hero (no box, no buttons under description) -->
-        <div class="homeHero">
-
-          <!-- Left: editorial headline + description -->
-          <div>
-            <h1 class="homeTitle">
-              I build robots<br/>
-              that feel alive.
-            </h1>
-
-            <p class="homeDesc">
-              I’m a robotic engineer with a love for bio-inspired designs,
-              expressive motion, and hands-on making.
-              From mechanisms to animatronics, I focus on how machines move, behave, and connect with people.
-            </p>
-          </div>
-
-          <!-- Right: blank blended area (no rectangle placeholder) -->
-          <div class="heroMedia" aria-label="Hero media area"></div>
-          <!-- Later, when you have a photo, we’ll blend it by:
-               1) Upload assets/hero.jpg
-               2) Change class to: class="heroMedia withPhoto"
-               3) Uncomment the background-image line in CSS (or I’ll do it for you)
-          -->
-
-        </div>
-
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="index.html" aria-label="Michael Huang, home">MH<span class="wordmark-dot">.</span></a>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a class="current" aria-current="page" href="index.html">Home</a>
+        <a href="projects.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main id="content">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-eyebrow"><span class="signal-dot"></span> MECHANICAL ENGINEER / DESIGNER / MAKER <span class="hero-index">PORTFOLIO — 2026</span></div>
+      <div class="hero-main">
+        <h1 id="hero-title">Making things<br><em>feel alive.</em></h1>
+        <p class="hero-description">I'm Michael Huang. I design mechanisms and build robots that move, interact, and spark curiosity.</p>
+      </div>
+      <div class="hero-bottom">
+        <span>BASED IN ANN ARBOR, MICHIGAN</span>
+        <a href="#work" class="text-link">EXPLORE SELECTED WORK <span aria-hidden="true">↘</span></a>
       </div>
     </section>
-
-    <div class="footer">
-      <div class="wrap">© <span id="year"></span> Michael Huang • GitHub Pages</div>
-    </div>
+    <section id="work" class="work-section" aria-labelledby="work-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="section-index">01 / SELECTED WORK</p><h2 id="work-title">Ideas made tangible<span class="period">.</span></h2></div><p class="section-intro">An exploration of motion, mechanics, and the feeling of bringing an idea into the physical world.</p></div>
+        <div class="project-grid">
+          <a href="projects.html" class="project project-eye">
+            <div class="project-visual visual-eye"><span class="visual-top">01 / RESEARCH</span><span class="visual-center">EYE<span class="visual-asterisk">✳</span></span><span class="visual-bottom">4 DEGREES OF FREEDOM</span></div>
+            <div class="project-meta"><div><h3>Interactive Mechanical Eye</h3><p>MECHANISM DESIGN / BIOMIMETICS</p></div><span class="project-arrow" aria-hidden="true">↗</span></div>
+          </a>
+          <a href="projects.html" class="project project-panda">
+            <div class="project-visual visual-panda"><span class="visual-top">02 / ROBOTICS</span><span class="visual-center">MOVE<br>LIKE<br>NATURE.</span><span class="visual-bottom">BIO-INSPIRED ROBOTICS</span></div>
+            <div class="project-meta"><div><h3>Tree-Climbing Panda Robot</h3><p>ANIMATRONICS / ROBOT DESIGN</p></div><span class="project-arrow" aria-hidden="true">↗</span></div>
+          </a>
+          <a href="projects.html" class="project project-clutch">
+            <div class="project-visual visual-clutch"><span class="visual-top">03 / EXPERIMENTAL</span><span class="visual-center">ON<span class="visual-rule"></span>OFF</span><span class="visual-bottom">ELECTROSTATIC CLUTCH</span></div>
+            <div class="project-meta"><div><h3>Electrostatic Clutch Demonstrator</h3><p>MECHATRONICS / PROTOTYPING</p></div><span class="project-arrow" aria-hidden="true">↗</span></div>
+          </a>
+        </div>
+        <a class="all-work-link" href="projects.html">VIEW ALL WORK <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+    <section class="statement-section" aria-labelledby="statement-title">
+      <div class="container statement-inner"><p class="section-index">02 / MY APPROACH</p><h2 id="statement-title">Engineering isn't just about <span>making things work.</span> It's about making them <em>mean something.</em></h2><a class="statement-link" href="about.html">A LITTLE MORE ABOUT ME <span aria-hidden="true">↗</span></a></div>
+    </section>
+    <section class="contact-section container" aria-labelledby="contact-title"><p class="section-index">03 / GET IN TOUCH</p><div class="contact-row"><h2 id="contact-title">Have an idea?<br>Let's build it.</h2><a href="contact.html" class="contact-circle" aria-label="Go to contact page">↗</a></div></section>
   </main>
-
+  <footer class="site-footer"><div class="container footer-inner"><span>© <span id="year">2026</span> MICHAEL HUANG</span><span>DESIGNED TO BE DIFFERENT.</span><a href="https://www.linkedin.com/in/tinray-huang-1752b9308/" target="_blank" rel="noopener noreferrer">LINKEDIN ↗</a></div></footer>
   <script src="assets/app.js"></script>
 </body>
 </html>
