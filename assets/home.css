@@ -105,3 +105,10 @@ h1,h2,h3{font-family:var(--font-display)}
 .hero-main{width:100%}
 .hero-bottom{position:absolute;left:0;right:0;bottom:32px}
 @media(max-width:560px){.hero{padding-bottom:115px}.hero-bottom{bottom:32px}}
+
+/* Hero centered within the space between its upper and lower rules */
+.hero{display:grid;grid-template-rows:minmax(0,1fr) auto;justify-content:initial;position:relative}
+.hero-main{grid-row:1;align-self:center;width:100%}
+.hero-bottom{grid-row:2;position:static;left:auto;right:auto;bottom:auto}
+.section-index{font-size:15px;letter-spacing:.085em;font-weight:700}
+@media(max-width:560px){.hero-bottom{position:static;bottom:auto}}
