@@ -142,3 +142,40 @@ h1,h2,h3{font-family:var(--font-display)}
 .project-eye:hover .photo-arrow{transform:translate(4px,-4px)}
 @media(max-width:850px){.project-eye .photo-copy{width:48%}.project-eye .photo-title{font-size:clamp(26px,4vw,38px)}}
 @media(max-width:560px){.project-eye .featured-photo{height:390px}.project-eye .featured-photo img{object-position:69% center}.project-eye .photo-copy{top:20px;left:20px;width:60%}.project-eye .photo-title{font-size:26px}.project-eye .photo-description{font-size:14px}.project-eye .photo-arrow{right:18px;bottom:16px}}
+
+/* Eye image positioning and constant brightness: no hover flashes */
+.project-eye .featured-photo,
+.project-eye:hover .featured-photo{
+  filter:none;
+  transition:none;
+}
+.project-eye .featured-photo img,
+.project-eye:hover .featured-photo img{
+  width:108%;
+  max-width:none;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:8%;
+  object-fit:cover;
+  object-position:center;
+  transform:none;
+  transition:none;
+  filter:brightness(1.24) contrast(1.04);
+}
+.project-eye .featured-photo::before{
+  background:linear-gradient(90deg,rgba(0,0,0,.64) 0%,rgba(0,0,0,.36) 28%,rgba(0,0,0,.07) 58%,transparent 100%);
+}
+.work-section .section-heading{
+  border-bottom:1px solid var(--line);
+  padding-bottom:30px;
+  margin-bottom:70px;
+}
+@media(max-width:560px){
+  .project-eye .featured-photo img,
+  .project-eye:hover .featured-photo img{
+    width:120%;
+    left:9%;
+  }
+  .work-section .section-heading{margin-bottom:35px;padding-bottom:24px}
+}
