@@ -226,3 +226,17 @@ h1,h2,h3{font-family:var(--font-display)}
   .work-section .section-index{font-size:17px}
   .project-eye .photo-copy{top:28px;left:28px}
 }
+
+/* Inset frame on the featured card, matching the smaller project cards */
+.project-eye .featured-photo::after{
+  content:"";
+  display:block;
+  position:absolute;
+  inset:12px;
+  border:1px solid rgba(255,255,255,.44);
+  border-radius:10px;
+  opacity:1;
+  z-index:2;
+  pointer-events:none;
+}
+@media(max-width:560px){.project-eye .featured-photo::after{inset:8px;border-radius:11px}}
