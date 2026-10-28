@@ -88,3 +88,9 @@ h1,h2,h3{font-family:var(--font-display)}
 .contact-circle:hover{background:#b4e0ff}
 @media(max-width:850px){.hero-main{grid-template-columns:1fr}.hero-description{max-width:560px;margin-top:8px}}
 @media(max-width:560px){.hero-description{font-size:21px}}
+
+/* Hero revision: remove labels; align intro to headline top and bottom */
+.hero-main{align-items:stretch}
+.hero-description{font-family:var(--font-body);font-weight:500;font-size:clamp(19px,1.75vw,27px);letter-spacing:-.025em;line-height:1.4;max-width:none;margin:0;align-self:stretch;display:flex;align-items:stretch;flex-direction:column;justify-content:space-between}
+.hero-bottom{justify-content:flex-end}
+@media(max-width:850px){.hero-main{align-items:start}.hero-description{display:block;max-width:560px}}
