@@ -342,3 +342,47 @@ h1,h2,h3{font-family:var(--font-display)}
   .work-section .work-label,.all-work-link,.statement-link{font-size:17px}
   .work-section .work-label::before,.all-work-link::before,.statement-link::before{height:19px}
 }
+
+/* Refined section heading: clear hierarchy without competing with the headline */
+.work-section .work-label{
+  font-family:var(--font-display);
+  font-size:clamp(20px,1.7vw,25px);
+  font-weight:700;
+  letter-spacing:-.025em;
+  line-height:1.15;
+  text-transform:none;
+  gap:14px;
+  margin-bottom:28px;
+}
+.work-section .work-label::before{height:26px;width:5px;flex-basis:5px}
+.work-section .label-arrow{display:none}
+
+/* All three editorial calls to action share the hero link's exact text treatment */
+.text-link,
+.all-work-link,
+.statement-link{
+  font-family:var(--font-body);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.1em;
+  line-height:normal;
+  text-transform:none;
+  display:inline-block;
+  border:0;
+  border-bottom:0;
+  padding:0;
+  gap:0;
+}
+.all-work-link::before,.statement-link::before{display:none}
+.text-link span,.all-work-link span,.statement-link span{
+  display:inline-block;
+  font-family:var(--font-body);
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:normal;
+  margin-left:12px;
+}
+@media(max-width:560px){
+  .work-section .work-label{font-size:21px}
+  .text-link,.all-work-link,.statement-link{font-size:11px}
+}
