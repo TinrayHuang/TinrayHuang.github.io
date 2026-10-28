@@ -292,3 +292,53 @@ h1,h2,h3{font-family:var(--font-display)}
   .text-link:hover span,.all-work-link:hover span,.statement-link:hover span,
   .project:hover .project-arrow,.project-eye:hover .photo-arrow{transform:none}
 }
+
+/* Section identity and matching editorial CTA typography */
+.work-section .work-label,
+.all-work-link,
+.statement-link{
+  font-family:var(--font-display);
+  font-size:19px;
+  line-height:1.3;
+  font-weight:700;
+  letter-spacing:.045em;
+  text-transform:uppercase;
+}
+.work-section .work-label{
+  color:var(--ink);
+  display:inline-flex;
+  gap:13px;
+  align-items:center;
+  margin-bottom:24px;
+}
+.work-section .work-label::before,
+.all-work-link::before,
+.statement-link::before{
+  content:"";
+  display:inline-block;
+  width:5px;
+  height:21px;
+  flex:0 0 5px;
+  border-radius:2px;
+  background:#168de2;
+  vertical-align:middle;
+}
+.work-section .label-arrow{color:#168de2;font-size:23px;font-weight:500}
+.all-work-link,.statement-link{
+  display:inline-flex;
+  align-items:center;
+  gap:13px;
+  padding-bottom:0;
+  border-bottom:0;
+}
+.all-work-link{color:var(--ink)}
+.statement-link{color:var(--paper)}
+.all-work-link span,.statement-link span{
+  margin-left:10px;
+  font-size:23px;
+  font-weight:500;
+}
+@media(max-width:560px){
+  .work-section .work-label,.all-work-link,.statement-link{font-size:17px}
+  .work-section .work-label::before,.all-work-link::before,.statement-link::before{height:19px}
+}
