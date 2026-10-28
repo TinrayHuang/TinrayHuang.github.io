@@ -128,3 +128,17 @@ h1,h2,h3{font-family:var(--font-display)}
 .work-section .section-heading{margin-bottom:clamp(75px,9vw,145px)}
 .project-eye .photo-overline{font-family:var(--font-display);font-size:clamp(18px,2.4vw,35px);font-weight:600;letter-spacing:-.025em;text-transform:none;max-width:75%;line-height:1.15}
 .project-eye .project-meta .eye-description{font-family:var(--font-body);font-size:clamp(14px,1.3vw,18px);font-weight:400;letter-spacing:normal;line-height:1.45;text-transform:none;color:#536d85;margin:7px 0 0}
+
+/* V6: Entire eye card is the photograph, with copy as a single overlay */
+.project-eye .featured-photo{background:#050505;position:relative;isolation:isolate;overflow:hidden;padding:0}
+.project-eye .featured-photo img{width:100%;height:100%;object-fit:cover;object-position:62% 46%;transition:transform .65s cubic-bezier(.22,1,.36,1);display:block}
+.project-eye:hover .featured-photo img{transform:scale(1.035)}
+.project-eye .featured-photo::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.73) 0%,rgba(0,0,0,.46) 29%,rgba(0,0,0,.12) 57%,transparent 100%)}
+.project-eye .featured-photo::after{display:none}
+.project-eye .photo-copy{position:absolute;z-index:2;top:clamp(25px,3.2vw,50px);left:clamp(25px,3.2vw,50px);width:min(38%,440px);color:white}
+.project-eye .photo-title{font-family:var(--font-display);font-weight:600;font-size:clamp(27px,3.2vw,47px);line-height:1.06;letter-spacing:-.055em;margin:0 0 15px}
+.project-eye .photo-description{font-family:var(--font-body);font-weight:400;font-size:clamp(15px,1.3vw,20px);line-height:1.45;letter-spacing:normal;margin:0;color:rgba(255,255,255,.9)}
+.project-eye .photo-arrow{position:absolute;z-index:2;right:clamp(20px,3vw,44px);bottom:clamp(20px,3vw,44px);font-size:32px;color:white;transition:transform .2s}
+.project-eye:hover .photo-arrow{transform:translate(4px,-4px)}
+@media(max-width:850px){.project-eye .photo-copy{width:48%}.project-eye .photo-title{font-size:clamp(26px,4vw,38px)}}
+@media(max-width:560px){.project-eye .featured-photo{height:390px}.project-eye .featured-photo img{object-position:69% center}.project-eye .photo-copy{top:20px;left:20px;width:60%}.project-eye .photo-title{font-size:26px}.project-eye .photo-description{font-size:14px}.project-eye .photo-arrow{right:18px;bottom:16px}}
