@@ -1,81 +1,97 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Tinray (Michael) Huang | Projects</title>
-  <link rel="stylesheet" href="assets/styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Explore the engineering, robotics, and mechanism design projects of Michael Huang.">
+  <title>Work — Michael Huang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/home.css">
+  <link rel="stylesheet" href="assets/work.css">
 </head>
 <body>
-  <div class="gridline" aria-hidden="true"></div>
-
-  <header>
-    <div class="wrap">
-      <div class="nav">
-        <div class="brand">
-          <div class="name">Tinray Huang</div>
-          <div class="dot">•</div>
-          <div class="role">Robotics / Mechanical Engineering</div>
-        </div>
-
-        <nav aria-label="Primary">
-          <ul>
-            <li><a data-page="index.html" href="index.html">Home</a></li>
-            <li><a data-page="about.html" href="about.html">About</a></li>
-            <li><a data-page="projects.html" href="projects.html">Projects</a></li>
-            <li><a data-page="activities.html" href="activities.html">Activities</a></li>
-            <li><a data-page="contact.html" href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-
-        <div class="actions">
-          <a class="iconBtn" href="https://www.linkedin.com/in/tinray-huang-1752b9308/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H7.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.33 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM3.55 20.45h3.56V9H3.55v11.45z"/>
-            </svg>
-          </a>
-
-          <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-      </div>
-
-      <div class="mobileMenu" id="mobileMenu">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="index.html" aria-label="Michael Huang, home">MH<span class="wordmark-dot">.</span></a>
+      <nav class="primary-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
+        <a class="current" aria-current="page" href="projects.html">Work</a>
         <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="activities.html">Activities</a>
         <a href="contact.html">Contact</a>
-      </div>
+      </nav>
     </div>
   </header>
+  <main id="content">
+    <section class="work-hero container" aria-labelledby="work-page-title">
+      <p class="work-kicker">SELECTED PROJECTS / ENGINEERING & DESIGN</p>
+      <div class="work-hero-grid">
+        <h1 id="work-page-title">Things I've<br><em>made<span class="period">.</span></em></h1>
+        <p>From expressive robots to experimental mechanisms. A collection of ideas taken from sketches and calculations into the physical world.</p>
+      </div>
+      <div class="work-hero-foot"><span>EXPLORE THE WORK</span><span aria-hidden="true">↓</span></div>
+    </section>
 
-  <main>
-    <section>
-      <div class="wrap">
-        <div class="kicker">Projects</div>
-        <h2>Selected work</h2>
-        <p class="sub">Placeholder — we’ll add project cards and detail pages next.</p>
-
-        <div class="cards">
-          <div class="card">
-            <h3>Project Placeholder</h3>
-            <p>Title • 1–2 lines • media links later</p>
+    <section class="work-gallery" aria-label="Featured projects">
+      <div class="container">
+        <div class="work-section-head"><span>01 / PROJECTS</span><span>DESIGN → BUILD → TEST</span></div>
+        <a href="#eye" class="work-feature work-tile" aria-label="Explore Interactive Mechanical Eye Model">
+          <div class="work-feature-img"><img src="assets/eye-feature.jpg" alt="Mechanical eye model prototype against a black background" loading="lazy"></div>
+          <div class="work-feature-gradient"></div>
+          <div class="work-feature-text">
+            <span class="work-project-index">01 / BIOMIMETIC MECHANISMS</span>
+            <h2>Interactive<br>Mechanical Eye<span class="work-dot">.</span></h2>
+            <p>A four-degree-of-freedom model that recreates human eye motion.</p>
           </div>
-          <div class="card">
-            <h3>Project Placeholder</h3>
-            <p>Title • 1–2 lines • media links later</p>
-          </div>
+          <span class="work-tile-arrow" aria-hidden="true">↗</span>
+        </a>
+        <div class="work-small-grid">
+          <a href="#panda" class="work-tile work-panda" aria-label="Explore Tree-Climbing Panda Robot">
+            <span class="work-project-index">02 / BIO-INSPIRED ROBOTICS</span>
+            <div class="work-placeholder-graphic" aria-hidden="true"><span>MOVE<br>LIKE<br>NATURE.</span></div>
+            <div class="work-small-copy"><h2>Tree-Climbing<br>Panda Robot</h2><p>Designing expressive mechanisms inspired by the natural world.</p></div>
+            <span class="work-tile-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a href="#clutch" class="work-tile work-clutch" aria-label="Explore Electrostatic Clutch Demonstrator">
+            <span class="work-project-index">03 / EXPERIMENTAL MECHANISMS</span>
+            <div class="work-placeholder-graphic clutch-graphic" aria-hidden="true"><span>ON</span><i></i><span>OFF</span></div>
+            <div class="work-small-copy"><h2>Electrostatic<br>Clutch Demonstrator</h2><p>Exploring electrically controlled friction through physical prototypes.</p></div>
+            <span class="work-tile-arrow" aria-hidden="true">↗</span>
+          </a>
         </div>
+        <p class="work-gallery-note">More projects and process imagery coming soon.</p>
       </div>
     </section>
 
-    <div class="footer">
-      <div class="wrap">© <span id="year"></span> Tinray (Michael) Huang • GitHub Pages</div>
-    </div>
-  </main>
+    <section class="work-details container" aria-labelledby="behind-title">
+      <div class="work-details-intro">
+        <p class="work-kicker">BEHIND THE WORK</p>
+        <h2 id="behind-title">The process matters<span class="period">.</span></h2>
+        <p>Each project begins with a question and evolves through design decisions, prototypes, testing, and iteration. Here are the ideas behind the work.</p>
+      </div>
+      <article id="eye" class="work-detail">
+        <span class="work-detail-count">01</span><div><h3>Interactive Mechanical Eye Model</h3><p>Designed to reproduce the motion of a human eye, this research prototype combines multiple rotational axes and axial movement into a compact mechanical assembly. Developed in collaboration with clinical researchers, the project explored the challenges of making complex biological motion tangible.</p><span class="work-tags">MECHANISM DESIGN · BIOMIMETICS · PROTOTYPING</span></div>
+      </article>
+      <article id="panda" class="work-detail">
+        <span class="work-detail-count">02</span><div><h3>Tree-Climbing Panda Robot</h3><p>A bio-inspired robotic platform developed during my internship at the Industrial Technology Research Institute. My work included a redesigned gripping mechanism, moving jaw, integrated head system, and exterior structure—where mechanical performance meets character-driven design.</p><span class="work-tags">ROBOTICS · ANIMATRONICS · MECHANICAL INTEGRATION</span></div>
+      </article>
+      <article id="clutch" class="work-detail">
+        <span class="work-detail-count">03</span><div><h3>Electrostatic Clutch Demonstrator</h3><p>An ongoing research project at the University of Michigan, investigating how electrostatic attraction and friction can be used to control mechanical motion. The work connects experimental characterization with the design of a demonstrator that makes the technology easy to understand.</p><span class="work-tags">RESEARCH · EXPERIMENTATION · PROTOTYPING</span></div>
+      </article>
+    </section>
 
+    <section class="work-outro">
+      <div class="container">
+        <p class="work-kicker">WHAT'S NEXT?</p>
+        <h2>Have something<br><em>in mind<span class="period">?</span></em></h2>
+        <a class="work-contact" href="contact.html">LET'S TALK <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><span>© <span id="year">2026</span> MICHAEL HUANG</span></div></footer>
   <script src="assets/app.js"></script>
 </body>
 </html>
