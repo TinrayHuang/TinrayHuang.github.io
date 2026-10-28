@@ -94,3 +94,8 @@ h1,h2,h3{font-family:var(--font-display)}
 .hero-description{font-family:var(--font-body);font-weight:500;font-size:clamp(19px,1.75vw,27px);letter-spacing:-.025em;line-height:1.4;max-width:none;margin:0;align-self:stretch;display:flex;align-items:stretch;flex-direction:column;justify-content:space-between}
 .hero-bottom{justify-content:flex-end}
 @media(max-width:850px){.hero-main{align-items:start}.hero-description{display:block;max-width:560px}}
+
+/* Single continuous introduction, visually balanced with the two-line hero heading */
+.hero-main{align-items:center}
+.hero-description{display:block;align-self:center;max-width:390px;font-family:var(--font-body);font-weight:500;font-size:clamp(23px,2.2vw,33px);line-height:1.55;letter-spacing:-.025em;margin:0;text-wrap:pretty}
+@media(max-width:850px){.hero-description{align-self:start;max-width:550px;line-height:1.4}}
