@@ -179,3 +179,34 @@ h1,h2,h3{font-family:var(--font-display)}
   }
   .work-section .section-heading{margin-bottom:35px;padding-bottom:24px}
 }
+
+/* Project card polish — consistent rounded corners and tactile hover */
+.project{
+  display:block;
+  border-radius:18px;
+  overflow:hidden;
+  transition:transform .28s cubic-bezier(.22,1,.36,1),box-shadow .28s ease;
+  transform-origin:center;
+}
+.project:hover{
+  transform:scale(1.018);
+  box-shadow:0 16px 38px rgba(15,39,70,.13);
+}
+.project:focus-visible{outline:3px solid #398cf5;outline-offset:5px}
+.project .project-visual{border-radius:18px;overflow:hidden}
+.project-eye .featured-photo img,
+.project-eye:hover .featured-photo img{
+  width:104%;
+  left:10%;
+  filter:brightness(1.08) contrast(1.02);
+  transform:none;
+  transition:none;
+}
+@media(max-width:560px){
+  .project-eye .featured-photo img,
+  .project-eye:hover .featured-photo img{width:114%;left:12%}
+}
+@media(prefers-reduced-motion:reduce){
+  .project{transition:none}
+  .project:hover{transform:none}
+}
