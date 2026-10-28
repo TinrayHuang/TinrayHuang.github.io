@@ -112,3 +112,14 @@ h1,h2,h3{font-family:var(--font-display)}
 .hero-bottom{grid-row:2;position:static;left:auto;right:auto;bottom:auto}
 .section-index{font-size:15px;letter-spacing:.085em;font-weight:700}
 @media(max-width:560px){.hero-bottom{position:static;bottom:auto}}
+
+/* Featured mechanical eye editorial photograph */
+.project:first-child .featured-photo{background:#050505;padding:0;position:relative;isolation:isolate}
+.featured-photo img{width:100%;height:100%;object-fit:cover;object-position:center 46%;display:block;transition:transform .65s cubic-bezier(.22,1,.36,1)}
+.project:hover .featured-photo img{transform:scale(1.035)}
+.featured-photo::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.45),transparent 22%,transparent 65%,rgba(0,0,0,.52));pointer-events:none}
+.featured-photo::after{display:none}
+.photo-overline,.photo-caption{position:absolute;z-index:2;left:clamp(20px,3vw,48px);color:#fff;font-family:var(--font-body);font-size:clamp(10px,.85vw,13px);font-weight:700;letter-spacing:.12em}
+.photo-overline{top:clamp(20px,3vw,40px)}
+.photo-caption{bottom:clamp(20px,3vw,40px)}
+@media(max-width:560px){.project:first-child .featured-photo{height:360px}.featured-photo img{object-position:50% 45%}}
