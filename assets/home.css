@@ -210,3 +210,19 @@ h1,h2,h3{font-family:var(--font-display)}
   .project{transition:none}
   .project:hover{transform:none}
 }
+
+/* Selected Work spacing and editorial details */
+.work-section{padding-top:58px}
+.work-section .section-index{font-size:19px;letter-spacing:.085em}
+.work-section .section-heading{
+  border-bottom-color:#9eb7cb;
+}
+.project-eye .photo-copy{
+  top:clamp(37px,calc(3.2vw + 12px),62px);
+  left:clamp(37px,calc(3.2vw + 12px),62px);
+}
+@media(max-width:560px){
+  .work-section{padding-top:48px}
+  .work-section .section-index{font-size:17px}
+  .project-eye .photo-copy{top:28px;left:28px}
+}
