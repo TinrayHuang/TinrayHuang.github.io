@@ -1,73 +1,104 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Michael Huang | About</title>
-  <link rel="stylesheet" href="assets/styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Meet Michael Huang, a mechanical engineer working at the intersection of mechanisms, robotics, and expressive design.">
+  <title>About — Michael Huang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/home.css">
+  <link rel="stylesheet" href="assets/about.css">
 </head>
-
 <body>
-  <main>
-    <section>
-      <div class="wrap">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="index.html" aria-label="Michael Huang, home">MH<span class="wordmark-dot">.</span></a>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Work</a>
+        <a class="current" aria-current="page" href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-        <!-- EXACT same top bar as Home -->
-        <div class="homeTop">
-          <div class="homeBrand">Michael Huang</div>
-
-          <nav class="homeNav" aria-label="Primary">
-            <a data-page="index.html" href="/">Home</a>
-            <a data-page="about.html" href="/about.html" class="active">About</a>
-            <a data-page="projects.html" href="/projects.html">Projects</a>
-            <a data-page="activities.html" href="/activities.html">Activities</a>
-            <a data-page="contact.html" href="/contact.html">Contact</a>
-          </nav>
+  <main id="content">
+    <section class="about-hero container" aria-labelledby="about-title">
+      <p class="about-kicker">ABOUT MICHAEL</p>
+      <div class="about-hero-grid">
+        <h1 id="about-title">Curiosity<br>in motion<span class="period">.</span></h1>
+        <div class="about-hero-aside">
+          <span class="about-side-rule" aria-hidden="true"></span>
+          <p>I'm a mechanical engineer who loves bringing ideas into the physical world—especially when they move, respond, and feel a little more alive.</p>
         </div>
+      </div>
+      <div class="about-hero-bottom"><span>ENGINEER / DESIGNER / MAKER</span><span>ANN ARBOR, MICHIGAN</span></div>
+    </section>
 
-        <!-- About page content -->
-        <div class="pageHero">
-          <h1 class="pageTitle">About</h1>
-          <p class="pageDesc">
-            Placeholder — this is where your background, interests, and goals will go.
-            We’ll keep it human, focused, and aligned with animatronics / creative robotics.
-          </p>
+    <section class="about-story" aria-labelledby="story-title">
+      <div class="container about-story-grid">
+        <div>
+          <p class="about-kicker">01 / MY STORY</p>
+          <h2 id="story-title">More than<br>moving parts<span class="period">.</span></h2>
         </div>
-
-        <div class="aboutGrid">
-          <div class="aboutCard">
-            <h2 class="cardTitle">Short bio (placeholder)</h2>
-            <p class="cardText">
-              Add 2–4 sentences here later. Focus on how you think, how you build,
-              and what kind of roles you’re looking for.
-            </p>
-          </div>
-
-          <div class="aboutCard">
-            <h2 class="cardTitle">CV</h2>
-            <p class="cardText" style="margin-bottom:12px;">
-              A download link will live here.
-            </p>
-
-            <a class="btn disabled" href="#" aria-disabled="true">
-              Download CV (coming soon)
-            </a>
-
-            <p class="hintText">
-              Later, upload your PDF as
-              <code>assets/Michael_Huang_CV.pdf</code>
-            </p>
-          </div>
+        <div class="about-prose">
+          <p>I've always been drawn to the space where engineering meets creativity. I love figuring out how things work, but what really excites me is how a mechanism can create an experience—something surprising, expressive, or simply fun.</p>
+          <p>My work has taken me from building an interactive mechanical eye to developing a tree-climbing panda robot and exploring electrostatic clutches. Different projects, but a common question: <strong>how can we make machines feel more alive?</strong></p>
+          <p>Today, I'm pursuing my master's in Mechanical Engineering at the University of Michigan, continuing to explore robotics, mechanism design, and hands-on prototyping.</p>
         </div>
-
       </div>
     </section>
 
-    <div class="footer">
-      <div class="wrap">© <span id="year"></span> Michael Huang • GitHub Pages</div>
-    </div>
-  </main>
+    <section class="about-interests container" aria-labelledby="interests-title">
+      <div class="about-section-heading">
+        <p class="about-kicker">02 / WHAT DRIVES ME</p>
+        <h2 id="interests-title">Where I find inspiration<span class="period">.</span></h2>
+      </div>
+      <div class="about-interest-grid">
+        <article class="about-interest">
+          <span class="interest-number">01</span>
+          <h3>Motion with character.</h3>
+          <p>Robots, animatronics, and mechanisms that communicate personality through movement.</p>
+        </article>
+        <article class="about-interest">
+          <span class="interest-number">02</span>
+          <h3>Thoughtful engineering.</h3>
+          <p>Turning ambitious ideas into real, testable hardware through design, iteration, and experimentation.</p>
+        </article>
+        <article class="about-interest">
+          <span class="interest-number">03</span>
+          <h3>Creative exploration.</h3>
+          <p>Learning across disciplines, making things with my hands, and finding unexpected connections between art and technology.</p>
+        </article>
+      </div>
+    </section>
 
+    <section class="about-journey" aria-labelledby="journey-title">
+      <div class="container">
+        <div class="about-section-heading">
+          <p class="about-kicker">03 / THE PATH SO FAR</p>
+          <h2 id="journey-title">Built through experience<span class="period">.</span></h2>
+        </div>
+        <div class="journey-list">
+          <div class="journey-item"><span class="journey-type">NOW / EDUCATION</span><div><h3>University of Michigan</h3><p>M.S.E. in Mechanical Engineering · Ann Arbor, Michigan</p></div><span class="journey-year">2026 —</span></div>
+          <div class="journey-item"><span class="journey-type">INDUSTRY / ROBOTICS</span><div><h3>Industrial Technology Research Institute</h3><p>Robotic mechanism design · Bio-inspired panda robot</p></div><span class="journey-year">INTERNSHIP</span></div>
+          <div class="journey-item"><span class="journey-type">INDUSTRY / ENGINEERING</span><div><h3>Texas Instruments</h3><p>Facilities engineering · Analysis and problem-solving</p></div><span class="journey-year">INTERNSHIP</span></div>
+          <div class="journey-item"><span class="journey-type">EDUCATION / FOUNDATION</span><div><h3>National Taiwan University</h3><p>B.S. in Mechanical Engineering · Taipei, Taiwan</p></div><span class="journey-year">2021 — 2026</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-end container" aria-labelledby="about-end-title">
+      <p class="about-kicker">WHAT'S NEXT?</p>
+      <h2 id="about-end-title">Let's make something<br><em>worth remembering<span class="period">.</span></em></h2>
+      <a href="contact.html" class="about-contact-link">GET IN TOUCH <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><span>© <span id="year">2026</span> MICHAEL HUANG</span></div></footer>
   <script src="assets/app.js"></script>
 </body>
 </html>
