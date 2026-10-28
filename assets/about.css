@@ -1,0 +1,68 @@
+/* About page — shares color, typography, navigation, and footer with home.css */
+.about-kicker{font-family:var(--font-display);font-size:18px;font-weight:700;letter-spacing:-.025em;color:#416c8f;margin:0}
+.about-hero{padding-top:85px;min-height:680px;display:flex;flex-direction:column;justify-content:center}
+.about-hero-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(280px,.55fr);align-items:end;gap:55px;margin:56px 0 95px}
+.about-hero h1{font-size:clamp(80px,10.2vw,158px);font-weight:600;line-height:.89;letter-spacing:-.085em;margin:0}
+.about-hero-aside{padding-bottom:8px}
+.about-side-rule{display:block;width:56px;height:4px;background:#168de2;margin-bottom:28px}
+.about-hero-aside p{font-size:clamp(19px,1.75vw,25px);line-height:1.5;letter-spacing:-.025em;font-weight:500;margin:0}
+.about-hero-bottom{border-top:1px solid #b7cee0;display:flex;justify-content:space-between;gap:20px;padding:24px 0 32px;color:#53728c;font-size:12px;font-weight:700;letter-spacing:.09em}
+.about-story{background:#edf7ff;padding:125px 0}
+.about-story-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(45px,8vw,150px)}
+.about-story h2,.about-section-heading h2{font-size:clamp(45px,5.4vw,83px);font-weight:600;letter-spacing:-.065em;line-height:1.02;margin:32px 0 0}
+.about-prose{padding-top:4px}
+.about-prose p{font-size:clamp(18px,1.55vw,23px);line-height:1.65;margin:0 0 26px;color:#2e485f}
+.about-prose strong{color:var(--ink);font-weight:700}
+.about-interests{padding-top:125px;padding-bottom:140px}
+.about-section-heading{border-bottom:1px solid #a6bdcf;padding-bottom:40px;margin-bottom:60px}
+.about-interest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.about-interest{background:#edf7ff;border-radius:18px;padding:32px 30px 38px;min-height:300px;transition:transform .28s cubic-bezier(.22,1,.36,1),box-shadow .28s ease}
+.about-interest:hover{transform:scale(1.018);box-shadow:0 15px 35px rgba(15,39,70,.10)}
+.interest-number{display:block;font-size:14px;letter-spacing:.1em;font-weight:700;color:#4684b3;margin-bottom:60px}
+.about-interest h3{font-size:clamp(26px,2.4vw,37px);letter-spacing:-.055em;line-height:1.1;margin:0 0 16px}
+.about-interest p{color:#567188;font-size:17px;line-height:1.55;margin:0}
+.about-journey{background:#172d43;color:white;padding:120px 0 130px}
+.about-journey .about-kicker{color:#b6d6ef}
+.about-journey .about-section-heading{border-bottom-color:#577187}
+.journey-item{display:grid;grid-template-columns:200px 1fr 150px;gap:20px;align-items:start;padding:30px 0;border-bottom:1px solid #466078}
+.journey-type,.journey-year{font-size:12px;font-weight:700;letter-spacing:.08em;color:#a5c3da}
+.journey-year{text-align:right}
+.journey-item h3{font-size:clamp(24px,2.2vw,32px);font-weight:500;letter-spacing:-.04em;margin:0 0 8px}
+.journey-item p{font-size:16px;color:#b7cbdb;line-height:1.5;margin:0}
+.about-end{padding-top:145px;padding-bottom:145px}
+.about-end h2{font-size:clamp(52px,7.2vw,110px);font-weight:600;line-height:1.02;letter-spacing:-.072em;margin:45px 0 50px}
+.about-end h2 em{font-style:normal;color:#74b7eb}
+.about-contact-link{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;transition:transform .28s cubic-bezier(.22,1,.36,1)}
+.about-contact-link:hover{transform:scale(1.055)}
+.about-contact-link span{display:inline-block;font-size:18px;margin-left:12px;transition:transform .28s cubic-bezier(.22,1,.36,1)}
+.about-contact-link:hover span{transform:rotate(45deg)}
+@media(max-width:850px){
+  .about-hero{min-height:auto;padding-top:75px}
+  .about-hero-grid{grid-template-columns:1fr;gap:42px;margin:44px 0 80px}
+  .about-hero h1{font-size:clamp(70px,12vw,110px)}
+  .about-hero-aside{max-width:520px}
+  .about-story-grid{grid-template-columns:1fr;gap:30px}
+  .about-interest-grid{grid-template-columns:1fr;gap:16px}
+  .about-interest{min-height:auto}
+  .interest-number{margin-bottom:32px}
+  .journey-item{grid-template-columns:130px 1fr;gap:18px}
+  .journey-year{grid-column:2;text-align:left}
+}
+@media(max-width:560px){
+  .about-kicker{font-size:16px}
+  .about-hero{padding-top:56px}
+  .about-hero h1{font-size:clamp(58px,14vw,83px)}
+  .about-hero-grid{margin:37px 0 58px;gap:32px}
+  .about-hero-bottom{font-size:9px}
+  .about-story,.about-journey{padding:80px 0}
+  .about-interests{padding-top:80px;padding-bottom:90px}
+  .about-section-heading{margin-bottom:30px;padding-bottom:30px}
+  .about-story h2,.about-section-heading h2{font-size:clamp(41px,10vw,60px)}
+  .about-prose p{font-size:18px}
+  .about-interest{padding:25px}
+  .journey-item{grid-template-columns:1fr;gap:10px}
+  .journey-year{grid-column:1}
+  .about-end{padding:90px 0}
+  .about-end h2{font-size:clamp(45px,10vw,65px)}
+}
+@media(prefers-reduced-motion:reduce){.about-interest,.about-contact-link,.about-contact-link span{transition:none!important}}
