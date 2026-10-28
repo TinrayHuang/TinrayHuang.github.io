@@ -123,3 +123,8 @@ h1,h2,h3{font-family:var(--font-display)}
 .photo-overline{top:clamp(20px,3vw,40px)}
 .photo-caption{bottom:clamp(20px,3vw,40px)}
 @media(max-width:560px){.project:first-child .featured-photo{height:360px}.featured-photo img{object-position:50% 45%}}
+
+/* Featured project refinement */
+.work-section .section-heading{margin-bottom:clamp(75px,9vw,145px)}
+.project-eye .photo-overline{font-family:var(--font-display);font-size:clamp(18px,2.4vw,35px);font-weight:600;letter-spacing:-.025em;text-transform:none;max-width:75%;line-height:1.15}
+.project-eye .project-meta .eye-description{font-family:var(--font-body);font-size:clamp(14px,1.3vw,18px);font-weight:400;letter-spacing:normal;line-height:1.45;text-transform:none;color:#536d85;margin:7px 0 0}
