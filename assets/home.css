@@ -247,3 +247,48 @@ h1,h2,h3{font-family:var(--font-display)}
 .statement-inner h2 .approach-line:nth-child(3){color:var(--paper)}
 .statement-inner h2 .approach-line:nth-child(2){color:#91a9be}
 .statement-inner h2 em.approach-line{color:#83c9ff}
+
+/* Consistent interactive language across navigation and editorial links */
+.primary-nav a,
+.text-link,
+.all-work-link,
+.statement-link{
+  display:inline-block;
+  transform-origin:center;
+  transition:transform .28s cubic-bezier(.22,1,.36,1),opacity .22s ease;
+  will-change:transform;
+}
+.primary-nav a:hover,
+.text-link:hover,
+.all-work-link:hover,
+.statement-link:hover{
+  transform:scale(1.055);
+  opacity:1;
+}
+.text-link span,
+.all-work-link span,
+.statement-link span{
+  display:inline-block;
+  transform-origin:center;
+  transition:transform .28s cubic-bezier(.22,1,.36,1);
+}
+/* Turn diagonal arrows into horizontal right-pointing arrows on hover */
+.text-link:hover span{transform:rotate(-45deg)}
+.all-work-link:hover span,
+.statement-link:hover span{transform:rotate(45deg)}
+.project-arrow,
+.photo-arrow,
+.project-eye .photo-arrow{
+  display:inline-block;
+  transform-origin:center;
+  transition:transform .28s cubic-bezier(.22,1,.36,1);
+}
+.project:hover .project-arrow,
+.project-eye:hover .photo-arrow{
+  transform:rotate(45deg);
+}
+@media(prefers-reduced-motion:reduce){
+  .primary-nav a:hover,.text-link:hover,.all-work-link:hover,.statement-link:hover,
+  .text-link:hover span,.all-work-link:hover span,.statement-link:hover span,
+  .project:hover .project-arrow,.project-eye:hover .photo-arrow{transform:none}
+}
