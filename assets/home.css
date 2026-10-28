@@ -241,7 +241,9 @@ h1,h2,h3{font-family:var(--font-display)}
 }
 @media(max-width:560px){.project-eye .featured-photo::after{inset:8px;border-radius:11px}}
 
-/* Four intentional lines in My Approach */
-.statement-inner h2{max-width:none;font-size:clamp(38px,5.2vw,88px)}
-.statement-inner h2 .approach-line{display:block;white-space:nowrap}
-@media(max-width:560px){.statement-inner h2{font-size:clamp(29px,6.6vw,44px)}.statement-inner h2 .approach-line{white-space:normal}}
+/* Four intentional lines; preserve the original My Approach typography and colors */
+.statement-inner h2 .approach-line{display:block}
+.statement-inner h2 .approach-line:nth-child(1),
+.statement-inner h2 .approach-line:nth-child(3){color:var(--paper)}
+.statement-inner h2 .approach-line:nth-child(2){color:#91a9be}
+.statement-inner h2 em.approach-line{color:#83c9ff}
