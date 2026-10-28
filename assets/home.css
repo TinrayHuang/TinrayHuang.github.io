@@ -99,3 +99,9 @@ h1,h2,h3{font-family:var(--font-display)}
 .hero-main{align-items:center}
 .hero-description{display:block;align-self:center;max-width:390px;font-family:var(--font-body);font-weight:500;font-size:clamp(23px,2.2vw,33px);line-height:1.55;letter-spacing:-.025em;margin:0;text-wrap:pretty}
 @media(max-width:850px){.hero-description{align-self:start;max-width:550px;line-height:1.4}}
+
+/* Center the complete heading-and-introduction group vertically in the hero. */
+.hero{justify-content:center;position:relative}
+.hero-main{width:100%}
+.hero-bottom{position:absolute;left:0;right:0;bottom:32px}
+@media(max-width:560px){.hero{padding-bottom:115px}.hero-bottom{bottom:32px}}
