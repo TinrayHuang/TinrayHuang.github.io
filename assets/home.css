@@ -386,3 +386,13 @@ h1,h2,h3{font-family:var(--font-display)}
   .work-section .work-label{font-size:21px}
   .text-link,.all-work-link,.statement-link{font-size:11px}
 }
+
+/* Solid ice-blue featured project card; original prototype photo is silhouetted by an inline SVG clip path */
+.project-eye .featured-photo{background:#daecf9;color:var(--ink)}
+.project-eye .featured-photo::before{background:none}
+.project-eye .eye-artwork{display:block;position:absolute;top:0;left:10%;width:104%;height:100%;pointer-events:none}
+.project-eye .photo-copy{color:var(--ink)}
+.project-eye .photo-description{color:#46647e}
+.project-eye .photo-arrow{color:var(--ink)}
+.project-eye .featured-photo::after{border-color:rgba(43,98,139,.46)}
+@media(max-width:560px){.project-eye .eye-artwork{left:12%;width:114%}}
